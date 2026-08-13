@@ -1,0 +1,20 @@
+.button-custom {
+    width: 119px;
+    height: 56px;
+    gap: 8px;    
+    opacity: 1;
+    border-radius: 12px;
+    border-width: 2px;
+    padding-top: 16px;
+    padding-right: 32px;
+    padding-bottom: 16px;
+    padding-left: 32px;
+    background: #7B6EF6;
+    border: 2px solid #7B6EF6;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 16px;    
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #FFFFFF;
+}
