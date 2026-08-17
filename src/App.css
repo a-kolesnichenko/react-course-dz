@@ -1,4 +1,6 @@
 .app{
+  margin:auto;
+  /*max-width: 1200px;*/
   display: flex;
   flex-direction: column;  
 }
@@ -8,4 +10,13 @@
   flex-direction: row;
   gap: 16px;
   align-items: center;
+}
+
+.movie-cards-container{
+  max-width: 1200px;
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 16px;  
 }

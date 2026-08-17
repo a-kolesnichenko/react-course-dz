@@ -6,6 +6,7 @@
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
   --accent: #aa3bff;
+  --warning: #FFAD49;
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
@@ -31,8 +32,6 @@
 }
 
 #root {
-  margin-left: 25px;
-  max-width: 80%;  
   min-height: 100svh;
   display: flex;
   flex-direction: column;
