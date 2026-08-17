@@ -1,12 +1,13 @@
-import './Menu.css';
+import styles from './Menu.module.css';
+import cn from 'classnames';
 
 function Menu() {
 
 	return (
 		<div>
-            <div className='menu-links'>
-                <a className="menu-link active-link" href="#">Поиск фильмов</a>
-                <a className="menu-link" href="#">Мои фильмы</a>                
+            <div className={styles['menu-links']}>
+                <a className={cn(styles['menu-link'], styles['active-link'])} href="#">Поиск фильмов</a>
+                <a className={styles['menu-link']} href="#">Мои фильмы</a>                
             </div>
         </div>
 	);

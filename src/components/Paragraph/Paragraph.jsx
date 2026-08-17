@@ -1,9 +1,9 @@
-import './Paragraph.css';
+import styles from './Paragraph.module.css';
 
 function Paragraph({children}) {
 
 	return (
-		<p className='paragraph-custom'>{children}</p>
+		<p className={styles['paragraph-custom']}>{children}</p>
 	);
 }
 
