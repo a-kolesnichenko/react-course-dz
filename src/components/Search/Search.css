@@ -1,0 +1,33 @@
+.search-custom {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0%;
+    width: 312px;
+    height: 35px;    
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	flex-direction: row;
+    width: 384px;
+    height: 64px;
+    border-radius: 12px;
+    border-width: 1px;
+    padding-top: 12px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    gap: 16px;    
+    opacity: 1;    
+    border: 1px solid #323B54
+}
+
+.search-icon {
+    width: 24px;
+    height: 24px;
+    /*gap: 10px;    */
+    opacity: 1;    
+}

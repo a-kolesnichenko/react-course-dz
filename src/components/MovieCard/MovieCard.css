@@ -1,0 +1,84 @@
+.movie-card {
+    position: relative;
+    width: 265px;
+    height: 500px;
+    border-radius: 12px;    
+    opacity: 1;
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 16px;
+    padding-left: 8px;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    background-color:  #0d1120;
+}
+
+.movie-title{    
+    padding-top: 25px;
+    padding-left: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 2%;
+    color: #EBEEF5;
+    width: 100%;
+    align-self: stretch;
+    text-align: left;
+}
+
+.movie-to-chosen{
+    font-weight: 600;
+    padding-left: 15px;
+    padding-top: 20px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 2%;
+    color: #7B6EF6;
+    align-self: stretch;
+    text-align: left;
+    display: flex;
+    align-items: center;     
+    gap: 5px;
+}
+
+.movie-like{
+    width: 24px;
+    height: 24px;
+}
+
+.movie-star{
+  width: 16px;
+  height: 16px;
+}
+
+.movie-poster {    
+    width: 266px;
+    height: 400px;    
+    opacity: 1;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.movie-rating {    
+    position: absolute;    
+    color: var(--warning);
+    width: 55px;
+    height: 32px;
+    top: 16px;
+    left: 16px;
+    border-radius: 8px;
+    opacity: 1;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    background: #000000A6;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    gap: 5px;
+}
