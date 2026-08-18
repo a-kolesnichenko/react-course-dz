@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import moviesList from './MoviesList.js';
 import Header from './components/Header/Header.jsx';
 import MovieCard from './components/MovieCard/MovieCard.jsx';
 import styles from './App.module.css';
@@ -10,54 +11,25 @@ import LoginForm from './components/LoginForm/LoginForm.jsx';
 import { useLocalStorage } from './hooks/use-localstorage.hook.js';
 
 function App() {
-  	const data = [
-		{
-			posterSrc: '/black_widow.png',
-			title: 'Black Widow',
-			rating: 324
-		},
-    		{
-			posterSrc: '/shang_chi.png',
-			title: 'Shang-Chi',
-			rating: 124
-		},
-    		{
-			posterSrc: '/loki.png',
-			title: 'Loki',
-			rating: 235
-		},
-    		{
-			posterSrc: '/how_i_met_mother.png',
-			title: 'How I Met Your Mother',
-			rating: 123
-		},
-    {
-			posterSrc: '/money_heist.png',
-			title: 'Money Heist',
-			rating: 8125
-		}
-	];
-
+   
   const [searchQuery, setSearchQuery] = useState('');
-
-  const [_, setLocalStorageProfile] = useLocalStorage('profile');
-
-  const [profile, setProfile] = useState({userName: null, isLogined: false});
-
-  function handleLogin(profileData) {
+  const [profile, setProfile] = useLocalStorage('profile', {name: null, isLogined: false});
+  const data = moviesList;
+  
+  function handleLogin(name) {
 	console.log('Пользователь вошел в профиль');
+	const profileData = {name: name, isLogined: true};
 	setProfile(profileData);
   }
 
   function handleLogout() {
-	const nullProfile = {userName: null, isLogined: false};
-	setProfile(nullProfile);	
-	setLocalStorageProfile(nullProfile);
+	const nullProfile = {name: null, isLogined: false};
+	setProfile(nullProfile);
   }
   
   return (
     <div className={styles['app']}>
-     <Menu userName={profile.userName} isLogined={profile.isLogined} handleLogout={handleLogout}/>
+     <Menu profile={profile} handleLogout={handleLogout}/>
      <Header>Поиск</Header>
      <Paragraph>Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.</Paragraph>
      <div className={styles['search-button-container']}>
