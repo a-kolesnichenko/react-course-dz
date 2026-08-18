@@ -1,6 +1,19 @@
+.menu{
+    display: flex;
+    justify-content: flex-end;
+}
+
 .menu-links{
-    float:right;
-    margin: 10px 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.menu-user{
+    margin-left: 25px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 .menu-link{
