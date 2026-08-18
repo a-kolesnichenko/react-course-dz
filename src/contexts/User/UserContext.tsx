@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 
 export interface UserProfile {
-	name: string | null;
+	name: string;
 	isLogined: boolean;
 }
 
@@ -11,7 +11,7 @@ export interface UserContextType {
 }
 
 const initialContext: UserContextType = {
-    profile: { name: null, isLogined: false},
+    profile: { name: '', isLogined: false},
     setProfile: () => {},
 };
 

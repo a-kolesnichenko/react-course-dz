@@ -4,10 +4,10 @@ import Header from './components/Header/Header.tsx';
 import MovieCard from './components/MovieCard/MovieCard.tsx';
 import styles from './App.module.css';
 import Search from './components/Search/Search.tsx';
-import Button from './components/Button/Button.js';
+import Button from './components/Button/Button.tsx';
 import Paragraph from './components/Paragraph/Paragraph.tsx';
 import Menu from './components/Menu/Menu.tsx';
-import LoginForm from './components/LoginForm/LoginForm.js';
+import LoginForm from './components/LoginForm/LoginForm.tsx';
 
 
 function App() {

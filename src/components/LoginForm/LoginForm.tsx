@@ -3,6 +3,7 @@ import FormInput from '../FormInput/FormInput.tsx';
 import Button from '../Button/Button.tsx';
 import { useState, useEffect, useRef, useContext } from 'react';
 import { UserContext, type UserContextType } from '../../contexts/User/UserContext.tsx';
+import type { MouseEvent } from 'react'
 
 function LoginForm() {
 
@@ -20,7 +21,7 @@ function LoginForm() {
         }
 	}, [profile]);
 
-    function login(e: React.MouseEvent<HTMLButtonElement>) {
+    function login(e: MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
        
         const profileData = {name: name, isLogined: true};
