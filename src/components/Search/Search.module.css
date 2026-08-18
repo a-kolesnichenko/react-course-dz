@@ -5,6 +5,8 @@
     letter-spacing: 0%;
     width: 312px;
     height: 35px;    
+    background: none;
+    border: none;
 }
 
 .search-container {

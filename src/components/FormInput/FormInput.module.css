@@ -1,0 +1,25 @@
+.input {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0%;
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--text);
+}
+
+.input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;	
+    width: 380px;
+    height: 54px;
+    border-radius: 12px;
+    border-width: 1px;
+    padding-top: 12px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    border: 1px solid #323B54
+}

@@ -1,13 +1,30 @@
-import './Menu.css';
+import styles from './Menu.module.css';
+import cn from 'classnames';
+import { useContext } from 'react';
+import { UserContext } from '../../contexts/User/UserContext.jsx';
 
 function Menu() {
 
+    const { profile, setProfile } = useContext(UserContext);
+    const {name, isLogined} = profile;    
+
+    function handleLogout() {
+        const nullProfile = {name: null, isLogined: false};
+        setProfile(nullProfile);
+    }
+
 	return (
-		<div>
-            <div className='menu-links'>
-                <a className="menu-link active-link" href="#">Поиск фильмов</a>
-                <a className="menu-link" href="#">Мои фильмы</a>                
+		<div className={styles['menu']}>
+            <div className={styles['menu-links']}>
+                <a className={cn(styles['menu-link'], styles['active-link'])} href="#">Поиск фильмов</a>
+                <a className={styles['menu-link']} href="#">Мои фильмы</a>                
             </div>
+            <div className={styles['menu-user']}>
+                {isLogined && <a className={styles['menu-link']}>{name}</a>}
+                {isLogined && <a className={styles['menu-link']} onClick={handleLogout}>Выйти</a>}
+                {!isLogined && <a className={styles['menu-link']}>Войти</a>}
+            </div>
+            
         </div>
 	);
 }
