@@ -1,9 +1,17 @@
 import styles from './Menu.module.css';
 import cn from 'classnames';
+import { useContext } from 'react';
+import { UserContext } from '../../contexts/User/UserContext.jsx';
 
-function Menu({profile, handleLogout}) {
+function Menu() {
 
+    const { profile, setProfile } = useContext(UserContext);
     const {name, isLogined} = profile;    
+
+    function handleLogout() {
+        const nullProfile = {name: null, isLogined: false};
+        setProfile(nullProfile);
+    }
 
 	return (
 		<div className={styles['menu']}>

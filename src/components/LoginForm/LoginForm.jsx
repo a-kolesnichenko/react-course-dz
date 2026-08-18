@@ -1,15 +1,17 @@
 import styles from './LoginForm.module.css';
 import FormInput from '../FormInput/FormInput.jsx';
 import Button from '../Button/Button.jsx';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
+import { UserContext } from '../../contexts/User/UserContext.jsx';
 
-function LoginForm({onLogin, profile}) {
+function LoginForm() {
 
+    const { profile, setProfile } = useContext(UserContext);
+    
     const [name, setName] = useState('');
     const inputRef = useRef(null);
     
    	useEffect(() => {
-        console.log('profile changed');	
         if (!profile.isLogined) {
             inputRef.current.value = '';
             inputRef.current.focus();
@@ -18,7 +20,9 @@ function LoginForm({onLogin, profile}) {
 
     function login(e) {
         e.preventDefault();              
-        onLogin(name);
+       
+        const profileData = {name: name, isLogined: true};
+        setProfile(profileData);  
     }
 
     return (

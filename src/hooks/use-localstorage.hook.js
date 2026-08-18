@@ -6,7 +6,7 @@ export function useLocalStorage(key, initialValue) {
 	useEffect(() => {
 		const res = JSON.parse(localStorage.getItem(key));
 		if (res) {
-			setData(res);
+			setData(() => res);
 		}
 	},[key]);
 

@@ -1,5 +1,4 @@
-import { useState, useContext } from 'react';
-import { UserContext } from './contexts/User/UserContext.jsx';
+import { useState } from 'react';
 import moviesList from './MoviesList.js';
 import Header from './components/Header/Header.jsx';
 import MovieCard from './components/MovieCard/MovieCard.jsx';
@@ -14,24 +13,11 @@ import LoginForm from './components/LoginForm/LoginForm.jsx';
 function App() {
    
   const [searchQuery, setSearchQuery] = useState('');
-  const { profile, setProfile } = useContext(UserContext);
-
-  const data = moviesList;  
-  
-  function handleLogin(name) {
-	console.log('Пользователь вошел в профиль');
-	const profileData = {name: name, isLogined: true};
-	setProfile(profileData);
-  }
-
-  function handleLogout() {
-	const nullProfile = {name: null, isLogined: false};
-	setProfile(nullProfile);
-  }
+  const data = moviesList;
   
   return (	
 	<div className={styles['app']}>
-		<Menu profile={profile} handleLogout={handleLogout}/>
+		<Menu />
 		<Header>Поиск</Header>
 		<Paragraph>Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.</Paragraph>
 		<div className={styles['search-button-container']}>
@@ -49,7 +35,7 @@ function App() {
 			))}  
 		</div>   
 		<Header>Вход</Header>
-		<LoginForm onLogin={handleLogin} profile={profile}/>
+		<LoginForm  />
 	</div>	
   );
 }
