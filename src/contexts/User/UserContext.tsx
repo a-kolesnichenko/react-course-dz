@@ -10,9 +10,9 @@ export interface UserContextType {
 	setProfile: (profile: UserProfile) => void;
 }
 
-const initialContext: UserContextType = {
+export const InitialContext: UserContextType = {
     profile: { name: '', isLogined: false},
     setProfile: () => {},
 };
 
-export const UserContext = createContext<UserContextType>(initialContext);
+export const UserContext = createContext<UserContextType>(InitialContext);

@@ -1,7 +1,7 @@
 import styles from './Menu.module.css';
 import cn from 'classnames';
 import { useContext } from 'react';
-import { UserContext } from '../../contexts/User/UserContext.tsx';
+import { UserContext, InitialContext } from '../../contexts/User/UserContext.tsx';
 
 function Menu() {
 
@@ -9,8 +9,7 @@ function Menu() {
     const {name, isLogined} = profile;    
 
     function handleLogout() {
-        const nullProfile = {name: null, isLogined: false};
-        setProfile(nullProfile);
+        setProfile(InitialContext.profile);
     }
 
 	return (
