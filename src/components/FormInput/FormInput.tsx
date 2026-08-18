@@ -1,6 +1,8 @@
 import styles from './FormInput.module.css';
 
-function FormInput({placeholder, value, onChange, ref}) {
+import type { FormInputProps } from './FormInput.props';
+
+function FormInput({placeholder, value, onChange, ref}: FormInputProps) {
 
     return (
         <div className={styles['input-container']}>   

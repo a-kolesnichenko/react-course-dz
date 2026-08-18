@@ -1,4 +1,6 @@
- const moviesList = [
+ import { type Movie } from './interfaces/Movie';
+
+const moviesList: Movie[] = [
 		{
 			posterSrc: '/black_widow.png',
 			title: 'Black Widow',
@@ -14,7 +16,7 @@
 			title: 'Loki',
 			rating: 235
 		},
-    		{
+    	{
 			posterSrc: '/how_i_met_mother.png',
 			title: 'How I Met Your Mother',
 			rating: 123

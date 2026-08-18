@@ -1,24 +1,24 @@
 import { useState } from 'react';
-import moviesList from './MoviesList.js';
-import Header from './components/Header/Header.jsx';
-import MovieCard from './components/MovieCard/MovieCard.jsx';
+import moviesList from './MoviesList';
+import Header from './components/Header/Header.tsx';
+import MovieCard from './components/MovieCard/MovieCard.tsx';
 import styles from './App.module.css';
-import Search from './components/Search/Search.jsx';
-import Button from './components/Button/Button.jsx';
-import Paragraph from './components/Paragraph/Paragraph.jsx';
-import Menu from './components/Menu/Menu.jsx';
-import LoginForm from './components/LoginForm/LoginForm.jsx';
+import Search from './components/Search/Search.tsx';
+import Button from './components/Button/Button.js';
+import Paragraph from './components/Paragraph/Paragraph.tsx';
+import Menu from './components/Menu/Menu.tsx';
+import LoginForm from './components/LoginForm/LoginForm.js';
 
 
 function App() {
    
   const [searchQuery, setSearchQuery] = useState('');
   const data = moviesList;
-  
+
   return (	
 	<div className={styles['app']}>
 		<Menu />
-		<Header>Поиск</Header>
+		<Header text="Поиск"/>
 		<Paragraph>Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.</Paragraph>
 		<div className={styles['search-button-container']}>
 		<Search placeholder="Введите название" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
@@ -34,7 +34,7 @@ function App() {
 				/>
 			))}  
 		</div>   
-		<Header>Вход</Header>
+		<Header text="Вход"/>
 		<LoginForm  />
 	</div>	
   );

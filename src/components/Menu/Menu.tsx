@@ -1,7 +1,7 @@
 import styles from './Menu.module.css';
 import cn from 'classnames';
 import { useContext } from 'react';
-import { UserContext } from '../../contexts/User/UserContext.jsx';
+import { UserContext } from '../../contexts/User/UserContext.tsx';
 
 function Menu() {
 
