@@ -1,5 +1,7 @@
 export interface Movie {
-	posterSrc: string;
-	title: string;
-	rating: number;
+  Title: string
+  Year: string
+  imdbID: string
+  Type: string
+  Poster: string
 }

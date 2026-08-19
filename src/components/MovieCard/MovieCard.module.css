@@ -14,6 +14,10 @@
     background-color:  #0d1120;
 }
 
+.link {
+	text-decoration: none;
+}
+
 .movie-title{    
     padding-top: 25px;
     padding-left: 15px;
@@ -63,7 +67,7 @@
     display: block;
 }
 
-.movie-rating {    
+.movie-year {    
     position: absolute;    
     color: var(--yellow);
     width: 55px;

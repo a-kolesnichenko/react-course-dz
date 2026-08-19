@@ -7,7 +7,10 @@ import Login from './pages/Login/Login.tsx';
 import MoviesSearch from './pages/MoviesSearch/MoviesSearch.tsx';
 import Movie from './pages/Movie/Movie.tsx';
 import Favorites from './pages/Favorites/Favorites.tsx';
+import Error from './pages/Error/Error.tsx';
 import { UserContextProvider } from './contexts/User/user.context.tsx';
+import axios from 'axios';
+import { API_URL, API_KEY } from './helpers/API.ts';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -23,13 +26,22 @@ const router = createBrowserRouter([
       },
       {
         path: '/movie/:id',
-        element: <Movie />
+        element: <Movie />,
+        errorElement: <>Ошибка</>,
+        loader: async ({ params }) => {
+          const { data } = await axios.get(`${API_URL}/?i=${params.id}&apikey=${API_KEY}`);
+          return data;
+        }
       },
       {
         path: '/favorites',
         element: <Favorites />
       }
     ]
+  },
+  {
+    path: '*',
+    element: <Error /> 
   }
 ]);
 

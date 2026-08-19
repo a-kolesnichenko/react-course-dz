@@ -1,5 +1,6 @@
 export interface MovieCardProps {
 	posterSrc: string;
 	title: string;
-	rating: number;
+	year: string;
+	imdbID: string;
 }
