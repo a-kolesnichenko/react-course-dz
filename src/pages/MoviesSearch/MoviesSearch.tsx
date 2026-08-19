@@ -14,6 +14,7 @@ import axios from 'axios';
 function MoviesSearch() {
    
   const [searchQuery, setSearchQuery] = useState('');
+  const [hasSearched, setHasSearched] = useState(false);
   
   const [movies, setMovies] = useState<Movie[]>([]);
 
@@ -22,10 +23,11 @@ function MoviesSearch() {
 
       const { data } = await axios.get<MoviesSearchResponse>(`${API_URL}?s=${searchQuery}&apikey=${API_KEY}`);
       if (data.Response === 'True') {
-        setMovies(data.Search);
+        setMovies(data.Search);        
       } else {
-        setMovies([]);
+        setMovies([]);        
       }
+      setHasSearched(true);
     } catch (e) {
       console.error(e);
       return;
@@ -50,7 +52,7 @@ function MoviesSearch() {
             year={movie.Year} />
         ))}  
       </div>}
-      {movies.length === 0 && <div className={styles['movies-no-results-container']}>
+      {hasSearched && movies.length === 0 && <div className={styles['movies-no-results-container']}>
         <Header text="Упс... ничего не найдено"/>
         <Paragraph>Попробуйте изменить запрос или ввести более точное название фильма</Paragraph>
       </div>}

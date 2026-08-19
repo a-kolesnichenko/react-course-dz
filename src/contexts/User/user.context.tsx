@@ -6,11 +6,11 @@ import type { UserProfile } from './UserContext.tsx';
 
 export const UserContextProvider = ({ children }: UserContextProviderProps) => {
 
-	const [profile, setProfile] = useLocalStorage<UserProfile>('profile', InitialContext.profile);
+  const [profile, setProfile] = useLocalStorage<UserProfile>('profile', InitialContext.profile);
 
-	return (
-       <UserContext.Provider value={{ profile, setProfile }}>
-		{children}
+  return (
+    <UserContext.Provider value={{ profile, setProfile }}>
+      {children}
 	  </UserContext.Provider>
-      );
+  );
 };

@@ -20,9 +20,9 @@ function Menu() {
         <NavLink to="/favorites" className={({ isActive }) => cn(styles['menu-link'], {[styles['active-link']]: isActive	})} >Мои фильмы</NavLink>
       </div>
       <div className={styles['menu-user']}>
-        {isLogined && <NavLink to="/login" className={({ isActive }) => cn(styles['menu-link'], {[styles['active-link']]: isActive	})}>{name}</NavLink>}
+        {isLogined && <NavLink to="/auth/login" className={({ isActive }) => cn(styles['menu-link'], {[styles['active-link']]: isActive	})}>{name}</NavLink>}
         {isLogined && <NavLink to="/" className={({ isActive }) => cn(styles['menu-link'], {[styles['active-link']]: isActive	})} onClick={handleLogout}>Выйти</NavLink>}
-        {!isLogined && <NavLink to="/login" className={({ isActive }) => cn(styles['menu-link'], {[styles['active-link']]: isActive	})}>Войти</NavLink>}
+        {!isLogined && <NavLink to="/auth/login" className={({ isActive }) => cn(styles['menu-link'], {[styles['active-link']]: isActive	})}>Войти</NavLink>}
       </div>            
     </div>
   );
