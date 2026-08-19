@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: '/movie/:id',
         element: <Movie />,
-        errorElement: <>Ошибка</>,
+        errorElement: <Error />,
         loader: async ({ params }) => {
           const { data } = await axios.get(`${API_URL}/?i=${params.id}&apikey=${API_KEY}`);
           return data;
