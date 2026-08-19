@@ -11,18 +11,15 @@ import Error from './pages/Error/Error.tsx';
 import { UserContextProvider } from './contexts/User/user.context.tsx';
 import axios from 'axios';
 import { API_URL, API_KEY } from './helpers/API.ts';
+import { RequireAuth } from './helpers/RequireAuth.tsx';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: <RequireAuth><Layout /></RequireAuth>,
     children: [
       {
         path: '/',
         element: <MoviesSearch />
-      },
-      {
-        path: '/login',
-        element: <Login />
       },
       {
         path: '/movie/:id',
@@ -36,6 +33,16 @@ const router = createBrowserRouter([
       {
         path: '/favorites',
         element: <Favorites />
+      }
+    ]
+  },
+  {
+    path: '/auth',
+    element: <Layout />,
+    children: [
+      {
+        path: 'login',
+        element: <Login />
       }
     ]
   },

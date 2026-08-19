@@ -4,9 +4,11 @@ import Button from '../Button/Button.tsx';
 import { useState, useEffect, useRef, useContext } from 'react';
 import { UserContext, type UserContextType } from '../../contexts/User/UserContext.tsx';
 import type { MouseEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
 
+  const navigate = useNavigate();
   const { profile, setProfile } = useContext<UserContextType>(UserContext);
     
   const [name, setName] = useState('');
@@ -26,6 +28,7 @@ function LoginForm() {
        
     const profileData = {name: name, isLogined: true};
     setProfile(profileData);  
+    navigate('/');
   }
 
   return (

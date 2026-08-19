@@ -11,8 +11,8 @@ export interface UserContextType {
 }
 
 export const InitialContext: UserContextType = {
-    profile: { name: '', isLogined: false},
-    setProfile: () => {},
+  profile: { name: '', isLogined: false},
+  setProfile: () => {}
 };
 
 export const UserContext = createContext<UserContextType>(InitialContext);
