@@ -2,30 +2,30 @@ import styles from './Menu.module.css';
 import cn from 'classnames';
 import { useContext } from 'react';
 import { UserContext, InitialContext } from '../../contexts/User/UserContext.tsx';
+import { NavLink } from 'react-router-dom';
 
 function Menu() {
 
-    const { profile, setProfile } = useContext(UserContext);
-    const {name, isLogined} = profile;    
+  const { profile, setProfile } = useContext(UserContext);
+  const {name, isLogined} = profile;    
 
-    function handleLogout() {
-        setProfile(InitialContext.profile);
-    }
+  function handleLogout() {
+    setProfile(InitialContext.profile);
+  }
 
-	return (
-		<div className={styles['menu']}>
-            <div className={styles['menu-links']}>
-                <a className={cn(styles['menu-link'], styles['active-link'])} href="#">Поиск фильмов</a>
-                <a className={styles['menu-link']} href="#">Мои фильмы</a>                
-            </div>
-            <div className={styles['menu-user']}>
-                {isLogined && <a className={styles['menu-link']}>{name}</a>}
-                {isLogined && <a className={styles['menu-link']} onClick={handleLogout}>Выйти</a>}
-                {!isLogined && <a className={styles['menu-link']}>Войти</a>}
-            </div>
-            
-        </div>
-	);
+  return (
+    <div className={styles['menu']}>
+      <div className={styles['menu-links']}>
+        <NavLink to="/" className={({ isActive }) => cn(styles['menu-link'], {[styles['active-link']]: isActive	})}>Поиск фильмов</NavLink>
+        <NavLink to="/favorites" className={({ isActive }) => cn(styles['menu-link'], {[styles['active-link']]: isActive	})} >Мои фильмы</NavLink>
+      </div>
+      <div className={styles['menu-user']}>
+        {isLogined && <NavLink to="/login" className={({ isActive }) => cn(styles['menu-link'], {[styles['active-link']]: isActive	})}>{name}</NavLink>}
+        {isLogined && <NavLink to="/" className={({ isActive }) => cn(styles['menu-link'], {[styles['active-link']]: isActive	})} onClick={handleLogout}>Выйти</NavLink>}
+        {!isLogined && <NavLink to="/login" className={({ isActive }) => cn(styles['menu-link'], {[styles['active-link']]: isActive	})}>Войти</NavLink>}
+      </div>            
+    </div>
+  );
 }
 
 export default Menu;

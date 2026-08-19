@@ -1,6 +1,4 @@
-.app{
-  margin:auto;
-  /*max-width: 1200px;*/
+.movies-search-container{
   display: flex;
   flex-direction: column;  
 }
