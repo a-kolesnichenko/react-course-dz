@@ -7,6 +7,7 @@ import Login from './pages/Login/Login.tsx';
 import MoviesSearch from './pages/MoviesSearch/MoviesSearch.tsx';
 import Movie from './pages/Movie/Movie.tsx';
 import Favorites from './pages/Favorites/Favorites.tsx';
+import { UserContextProvider } from './contexts/User/user.context.tsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -34,6 +35,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-	  <RouterProvider router={router} />
+    <UserContextProvider>
+	    <RouterProvider router={router} />
+    </UserContextProvider>
   </StrictMode>
 );
