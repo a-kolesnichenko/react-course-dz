@@ -65,7 +65,7 @@
 
 .movie-rating {    
     position: absolute;    
-    color: var(--warning);
+    color: var(--yellow);
     width: 55px;
     height: 32px;
     top: 16px;

@@ -13,30 +13,30 @@ import LoginForm from './components/LoginForm/LoginForm.tsx';
 function App() {
    
   const [searchQuery, setSearchQuery] = useState('');
-  const data = moviesList;
-
+  const data = moviesList; 
+  
   return (	
-	<div className={styles['app']}>
-		<Menu />
-		<Header text="Поиск"/>
-		<Paragraph>Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.</Paragraph>
-		<div className={styles['search-button-container']}>
-		<Search placeholder="Введите название" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-		<Button onClick={() => console.log('Искать')}>Искать</Button>      
-		</div>  
-		<div className={styles['movie-cards-container']}>
-			{data.map(movie => (
-				<MovieCard 
-				key={movie.title}
-				posterSrc={movie.posterSrc}
-				title={movie.title}
-				rating={movie.rating}
-				/>
-			))}  
-		</div>   
-		<Header text="Вход"/>
-		<LoginForm  />
-	</div>	
+    <div className={styles['app']}>
+      <Menu />
+      <Header text="Поиск"/>
+      <Paragraph>Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.</Paragraph>
+      <div className={styles['search-button-container']}>
+        <Search placeholder="Введите название" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+        <Button onClick={() => console.log('Искать')}>Искать</Button>      
+      </div>  
+      <div className={styles['movie-cards-container']}>
+        {data.map(movie => (
+          <MovieCard 
+            key={movie.title}
+            posterSrc={movie.posterSrc}
+            title={movie.title}
+            rating={movie.rating}
+          />
+        ))}  
+      </div>   
+      <Header text="Вход"/>
+      <LoginForm  />
+    </div>	
   );
 }
 
